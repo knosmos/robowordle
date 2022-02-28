@@ -11,13 +11,20 @@ cell_size = [
 
 # Colors
 GREY = np.array([98, 100, 127])
-WHITE = np.array([255, 255, 255])
+WHITE = np.array([170, 164, 184])
 GREEN = np.array([72, 125, 105])
 YELLOW = np.array([67, 130, 162])
 
+emoji = {
+    "W":"⚫",
+    " ":"⚪",
+    "C":"🟢",
+    "M":"🟡"
+}
+
 colors = [["" for _ in range(grid_size[0])] for _ in range(grid_size[1])]
 
-img = cv2.imread('dewarped.png')
+img = cv2.imread('dewarped_2.png')
 for y in range(grid_size[1]):
     for x in range(grid_size[0]):
         mx = corners[0][0] + x * cell_size[0]
@@ -42,6 +49,7 @@ for y in range(grid_size[1]):
 
         colors[y][x] = best_color
 print(colors)
+print("\n".join(["".join([emoji[i] for i in row]) for row in colors]))
 
 cv2.imshow('color grid', img)
 cv2.waitKey()

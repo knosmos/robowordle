@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from rich import print
 
-image = cv2.imread('printed.png')
+image = cv2.imread('printed2.png')
 
 SIZE = 600
 
@@ -39,7 +39,7 @@ vertices = [
 ]
 matrix = cv2.getPerspectiveTransform(np.float32(bounding_box), np.float32(vertices))
 dewarped = cv2.warpPerspective(image, matrix, (SIZE, SIZE))
-cv2.imwrite('dewarped.png', dewarped)
+cv2.imwrite('dewarped_2.png', dewarped)
 cv2.imshow('Dewarped', dewarped)
 
 cv2.waitKey()

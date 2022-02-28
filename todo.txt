@@ -1,6 +1,6 @@
 [x] fiducial extraction and image dewarping
 [ ] simple printer control
-[ ] stylus mount
-[ ] wordle solver
+[X] stylus mount
+[X] wordle solver
 [ ] printer movement to precise location + screenpress
-[ ] color detection
+[X] color detection
