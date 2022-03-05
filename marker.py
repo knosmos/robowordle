@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from rich import print
 
-image = cv2.imread('printed.png')
+image = cv2.imread('img/printed.png')
 
 SIZE = 600
 
