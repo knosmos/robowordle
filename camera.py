@@ -7,6 +7,7 @@ from PIL import Image
 from threading import Thread
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 current_img = None
 
@@ -25,7 +26,7 @@ def index():
 
 def start():
     print("starting camera thread...")
-    t = Thread(target=app.run)
+    t = Thread(target=app.run, args=["0.0.0.0"])
     t.daemon = True
     t.start()
 

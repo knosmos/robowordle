@@ -20,7 +20,10 @@ def run():
         printer_control.typeWord(opt)
         print("waiting for result...")
         time.sleep(2) # In case printer hasn't stopped moving
-        result = color_detection.detect(camera.current_img)[num_guesses]
+        color_grid = color_detection.detect(camera.current_img)
+        print("Detected colors:")
+        color_detection.printGrid(color_grid)
+        result = color_grid[num_guesses]
 
         words = reduce(opt, result, words)
         opt = ""
@@ -33,3 +36,6 @@ def run():
                 opt = word
         num_guesses += 1
     print("the answer is", opt)
+
+if __name__ == "__main__":
+    run()

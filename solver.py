@@ -28,19 +28,3 @@ def reduce(word, result, words):
                         nres.append(w)
         res = nres
     return res
-
-# First guess is precomputed
-opt = "crate"
-result = ""
-while result != "CCCCC":
-    print(opt)
-    result = input("> ").upper()
-    words = reduce(opt, result, words)
-    opt = ""
-    opt_size = float("inf")
-    for word in words:
-        p = partition(word, words)
-        avg_partition_size = sum(p)/len(p)
-        if opt_size > avg_partition_size:
-            opt_size = avg_partition_size
-            opt = word
