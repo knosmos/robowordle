@@ -2,11 +2,9 @@ import cv2
 import numpy as np
 from rich import print
 
-image = cv2.imread('img/printed.png')
-
+dewarped = cv2.imread('../dewarped.png')
+'''
 SIZE = 600
-
-
 
 # Get ROI corners
 
@@ -40,8 +38,8 @@ vertices = [
 matrix = cv2.getPerspectiveTransform(np.float32(bounding_box), np.float32(vertices))
 dewarped = cv2.warpPerspective(image, matrix, (SIZE, SIZE))
 cv2.imwrite('dewarped.png', dewarped)
+'''
 cv2.imshow('Dewarped', dewarped)
-
 # Marker selection
 markers = []
 def selectMarker(event, x, y, flags, param):
