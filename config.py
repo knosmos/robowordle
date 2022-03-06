@@ -1,4 +1,8 @@
+# Camera Settings
+EXPOSURE = -6.5
+
 # Colors
+
 '''
 GREY = [2, 58, 127]
 WHITE = [0, 0, 255]
@@ -6,13 +10,20 @@ GREEN = [41, 108, 125]
 YELLOW = [20, 150, 162]
 '''
 
-GREY = [106, 88, 179]
-WHITE = [1, 41, 251]
-GREEN = [41, 108, 125]
-YELLOW = [13, 39, 203]
+'''
+GREY = [108, 71, 195]
+WHITE = [100, 10, 233]
+GREEN = [ 94, 74, 187]
+YELLOW = [ 18, 35, 223]
+'''
+
+GREY = 217/2
+GREEN = 170/2
+YELLOW = 60/2
 
 # Corners of Wordle grid
-corners = [(233, 135), (382, 319)]
+#corners = [(233, 135), (382, 319)]
+corners = [(231, 163), (381, 343)]
 grid_size = (5, 6)
 
 # Baseline values (X, Y) point to lower left corner

@@ -1,6 +1,7 @@
 words = open("words.txt").read().split("\n")
 
-def partition(word, words):
+def partition(word):
+    global words
     # Get how many words will remain for each possible response
     partitions = []
     for a in "MCW":
@@ -8,10 +9,11 @@ def partition(word, words):
             for c in "MCW":
                 for d in "MCW":
                     for e in "MCW":
-                        partitions.append(len(reduce(word, a+b+c+d+e, words)))
+                        partitions.append(len(reduce(word, a+b+c+d+e)))
     return partitions
 
-def reduce(word, result, words):
+def reduce(word, result):
+    global words
     # word: 5-letter word (lowercase)
     # result: 5-letter str consisting of M, C, W (misplaced, correct, wrong)
     res = words[:]

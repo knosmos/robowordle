@@ -61,12 +61,13 @@ def typeWord(word):
         time.sleep(2)
     typeLetter("/")
     # Move out of the way
-    set_pos(x=1, y=250, z=50)
+    set_pos(x=1, y=1, z=50)
 
 # Auto home
 def home():
     print("Running auto home...")
     p.send_now("G28 X Y Z W")
+    time.sleep(10)
 
 # Set X, Y, Z to default
 def ready_position():

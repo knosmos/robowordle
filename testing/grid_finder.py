@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from rich import print
 import sys
-
+'''
 image = cv2.imread(sys.argv[1])
 
 SIZE = 600
@@ -41,8 +41,9 @@ vertices = [
 matrix = cv2.getPerspectiveTransform(np.float32(bounding_box), np.float32(vertices))
 dewarped = cv2.warpPerspective(image, matrix, (SIZE, SIZE))
 cv2.imwrite('dewarped.png', dewarped)
+cv2.imshow('Dewarped', dewarped)'''
+dewarped = cv2.imread("dewarped.png")
 cv2.imshow('Dewarped', dewarped)
-
 # Marker selection
 markers = []
 def selectMarker(event, x, y, flags, param):

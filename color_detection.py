@@ -32,22 +32,24 @@ def detect(img):
             mx = corners[0][0] + x * cell_size[0]
             my = corners[0][1] + y * cell_size[1]
 
-            cv2.rectangle(img, (mx, my), (mx+cell_size[0], my+cell_size[1]), color=(0, 0, 255), thickness=2)
+            #cv2.rectangle(img, (mx, my), (mx+cell_size[0], my+cell_size[1]), color=(0, 0, 255), thickness=2)
             mean_color = np.array(bgr_to_hsv(cv2.mean(img[my:my+cell_size[0], mx:mx+cell_size[0]])[:-1]))
+            #mean_color = np.array(cv2.mean(img[my:my+cell_size[0], mx:mx+cell_size[0]])[:-1])
             
-            # cv2.imshow("cropped", img[my:my+cell_size[0], mx:mx+cell_size[0]])
-            # print(mean_color)
-            # cv2.waitKey()
+            #cv2.imshow("cropped", img[my:my+cell_size[0], mx:mx+cell_size[0]])
+            print(mean_color)
+            #cv2.waitKey()
             
+            #print(mean_color[0])
             diffs = [
-                np.linalg.norm(mean_color - GREY),
-                np.linalg.norm(mean_color - WHITE),
-                np.linalg.norm(mean_color - GREEN),
-                np.linalg.norm(mean_color - YELLOW)
+                np.linalg.norm(mean_color[0] - GREY),
+                #np.linalg.norm(mean_color - WHITE),
+                np.linalg.norm(mean_color[0] - GREEN),
+                np.linalg.norm(mean_color[0] - YELLOW)
             ]
             min_diff = min(diffs)
             min_index = diffs.index(min_diff)
-            best_color = ["W"," ","C","M"][min_index]
+            best_color = ["W","C","M"][min_index]
 
             colors[y][x] = best_color
     return colors
@@ -57,7 +59,7 @@ def printGrid(colors):
 
 if __name__ == "__main__":
     img = cv2.imread('dewarped.png')
-    print(colors)
-    printGrid()
+    colors = detect(img)
+    printGrid(colors)
     cv2.imshow('color grid', img)
     cv2.waitKey()

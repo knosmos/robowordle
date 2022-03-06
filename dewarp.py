@@ -1,4 +1,4 @@
-import cv2
+import cv2, time
 import numpy as np
 
 SIZE = 600
@@ -8,6 +8,8 @@ arucoDict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_APRILTAG_36h11)
 arucoParams = cv2.aruco.DetectorParameters_create()
 
 def dewarp(img):
+    # cv2.imshow('Original', img)
+    # cv2.waitKey()
     (corners, ids, rejected) = cv2.aruco.detectMarkers(img, arucoDict, parameters=arucoParams)
 
     # print(corners, ids, rejected)
@@ -40,7 +42,11 @@ def dewarp(img):
     return dewarped
 
 if __name__ == "__main__":
-    img = cv2.imread('img/setupTest.jpg')
+    cap = cv2.VideoCapture(2)
+    #time.sleep(2)
+    cap.set(15, -5.5)
+    ret, img = cap.read()
+    # img = cv2.imread('img/setupTest.jpg')
     dewarped = dewarp(img)
 
     cv2.imwrite('dewarped.png', dewarped)
