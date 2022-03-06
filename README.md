@@ -1,6 +1,5 @@
-# RoboWordle
-
-3D Printer plays Wordle
+![RoboWordle](https://user-images.githubusercontent.com/30610197/156938529-9f993491-394b-43b3-9357-c2317276c837.png)
+<h2 align=center>3D Printer plays Wordle</h2>
 
 https://user-images.githubusercontent.com/30610197/156936611-31ae89e9-2f76-4c8c-8465-29292354509c.mov
 
