@@ -12,14 +12,14 @@ https://user-images.githubusercontent.com/30610197/156936611-31ae89e9-2f76-4c8c-
 - [X] Image processing with OpenCV for color identification
 
 # Installation
-This project is not designed for widespread use, but if you do want to make it, here are the setup instructions:
-## Dependencies
+This project is not designed for widespread use, but if you do want to make it, here are the setup instructions.
+### Dependencies
 - `opencv-python`
 - `printrun`
 - `numpy`
 - `pyserial`
 
-## Assembly
+### Assembly
 1. Print out [the fiducial sheet](https://github.com/knosmos/robowordle/blob/master/assets/april.png) (must be original size, otherwise the scale will be wrong) and attach to 3D printer
 2. Attach stylus to the print head (I designed [this mount](https://github.com/knosmos/robowordle/blob/master/assets/mount.stl), but it will differ depending on the printer and stylus you use). Note that the stylus must be in contact with a sufficiently large conductive object for the capacitive touch to work (I used an alligator clip attached to the printer frame)
 3. Mount the camera (placement does not need to be precise as long as all four fiducials are clearly visible).

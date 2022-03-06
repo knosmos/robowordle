@@ -1,4 +1,4 @@
-words = open("words.txt").read().split("\n")
+words = open("assets/words.txt").read().split("\n")
 
 def partition(word):
     global words
