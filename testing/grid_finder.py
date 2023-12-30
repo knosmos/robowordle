@@ -42,7 +42,7 @@ matrix = cv2.getPerspectiveTransform(np.float32(bounding_box), np.float32(vertic
 dewarped = cv2.warpPerspective(image, matrix, (SIZE, SIZE))
 cv2.imwrite('dewarped.png', dewarped)
 cv2.imshow('Dewarped', dewarped)'''
-dewarped = cv2.imread("dewarped.png")
+dewarped = cv2.imread("../dewarped.png")
 cv2.imshow('Dewarped', dewarped)
 # Marker selection
 markers = []

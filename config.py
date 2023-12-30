@@ -1,5 +1,5 @@
 # Camera Settings
-EXPOSURE = -6.5
+EXPOSURE = -5.5
 
 # Colors
 
@@ -23,15 +23,16 @@ YELLOW = 60/2
 
 # Corners of Wordle grid
 #corners = [(233, 135), (382, 319)]
-corners = [(231, 163), (381, 343)]
+#corners = [(231, 163), (381, 343)]
+corners = [(233, 172), (380, 354)]
 grid_size = (5, 6)
 
 # Baseline values (X, Y) point to lower left corner
-X = 79.5
-Y = 82.5
+X = 77#79.5
+Y = 75#82.5
 Z_UP = 27
 Z_MID = 25
-Z_DOWN = 23
+Z_DOWN = 21
 
 # Positions of each letter button
 MARKERS = [

@@ -25,7 +25,9 @@ emoji = {
     "M":"🟡"
 }
 
-def detect(img):
+last = []
+
+def detect(img, num_guesses):
     colors = [["" for _ in range(grid_size[0])] for _ in range(grid_size[1])]
     for y in range(grid_size[1]):
         for x in range(grid_size[0]):
@@ -37,7 +39,7 @@ def detect(img):
             #mean_color = np.array(cv2.mean(img[my:my+cell_size[0], mx:mx+cell_size[0]])[:-1])
             
             #cv2.imshow("cropped", img[my:my+cell_size[0], mx:mx+cell_size[0]])
-            print(mean_color)
+            #print(mean_color)
             #cv2.waitKey()
             
             #print(mean_color[0])
@@ -52,6 +54,16 @@ def detect(img):
             best_color = ["W","C","M"][min_index]
 
             colors[y][x] = best_color
+    # blank out the rest of the grid
+    for r in range(num_guesses+1, grid_size[1]):
+        colors[r] = [" " for _ in range(grid_size[0])]
+    
+    # test for end of game: if the grid does not match the last grid, then the game is over
+    # because the stats page is displayed, screwing up the grid detection
+    global last
+    for i in range(num_guesses):
+        if colors[i] != last[i]:
+            colors[num_guesses] = ["C" for _ in range(grid_size[0])] # success
     return colors
 
 def printGrid(colors):
